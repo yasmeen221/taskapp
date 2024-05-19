@@ -19,9 +19,6 @@ const schema = yup.object().shape({
 });
 
 const page = () => {
-  const [errorMessage, setErrorMessage] = useState("");
-  const router = useRouter();
-  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -29,6 +26,9 @@ const page = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  const [errorMessage, setErrorMessage] = useState("");
+  const router = useRouter();
+  const dispatch = useDispatch();
   const onSubmitForm = (data) => {
     console.log("datalogin", data);
     console.log("Login successful");
