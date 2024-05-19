@@ -19,7 +19,7 @@ const schema = yup.object().shape({
     .required("Password is required"),
 });
 
-const pageRegister = () => {
+const page = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const {
@@ -103,8 +103,7 @@ const pageRegister = () => {
           </p>
         </div>
       </form>
-   
     </>
   );
 };
-export default pageRegister;
+export default page;

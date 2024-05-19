@@ -6,7 +6,7 @@ import * as yup from "yup";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../redux/authSlice"
+import { login } from "../redux/authSlice";
 const schema = yup.object().shape({
   email: yup
     .string()
@@ -18,7 +18,7 @@ const schema = yup.object().shape({
     .required("Password is required"),
 });
 
-const pageLogin = () => {
+const page = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
@@ -37,7 +37,6 @@ const pageLogin = () => {
       storedUser &&
       storedUser.email === data.email &&
       storedUser.password === data.password
-
     ) {
       dispatch(login(storedUser));
       router.push("/home");
@@ -115,4 +114,4 @@ const pageLogin = () => {
     </>
   );
 };
-export default pageLogin;
+export default page;
